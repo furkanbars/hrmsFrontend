@@ -1,4 +1,4 @@
-import React from "react";
+import React,{ useState,useEffect } from "react";
 import { Button,Card,Image } from "semantic-ui-react";
 import CvService from "../services/cvService"
  
