@@ -5,7 +5,7 @@ import SignedOut from "./SignedOut";
 import SignedIn from "./SignedIn";
 
 export default function Navi() {
-    const [isAuthenticated,setAuthenticated]=useState(true)
+    const [isAuthenticated,setAuthenticated]=useState(false)
     const history=useHistory()
 
     function handleSignOut(){
@@ -18,7 +18,7 @@ export default function Navi() {
 
   return (
     <div>
-      <Menu stackable>
+      <Menu className="myNavi" stackable size="large" style={{position:"fixed",top:"0px",right:"-4px",left:"-4px"}}>
         <Container>
           <Menu.Item>
             <img src="https://cdn.pixabay.com/photo/2014/04/02/10/16/fire-303309_1280.png" />

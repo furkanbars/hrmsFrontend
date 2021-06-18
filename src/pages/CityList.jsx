@@ -1,12 +1,31 @@
 import React, { useState, useEffect } from "react";
 import CityService from "../services/cityService.js";
 import CountryService from "../services/countryService";
-import { Button, Card, Image, Dropdown, Segment } from "semantic-ui-react";
+import {
+  Button,
+  Card,
+  Image,
+  Dropdown,
+  Segment,
+  Select,
+} from "semantic-ui-react";
 
 export default function CityList() {
   const [cities, setCities] = useState([]);
 
   const [countries, setCountries] = useState([]);
+
+  let countriesOptions = countries.map((country) => ({
+    key: country.id,
+    text: country.countryName,
+    value: country.id,
+  }));
+
+  let citiesOptions = cities.map((city) => ({
+    key: city.id,
+    text: city.cityName,
+    value: city.id,
+  }));
 
   useEffect(() => {
     let cityService = new CityService();
@@ -20,27 +39,11 @@ export default function CityList() {
 
   return (
     <div>
-      <Segment style={{ height: "17em"}}>
-        <header style={{marginLeft:"-9em"}}>Ülke/İl/İlçe</header>
-        <div style={{marginTop:"15px"}}>
-        <Dropdown placeholder="Ülke" scrolling selection>
-          <Dropdown.Menu>
-            {countries.map((country) => (
-              <Dropdown.Item>{country.countryName}</Dropdown.Item>
-            ))}
-          </Dropdown.Menu>
-        </Dropdown>
-        <Dropdown placeholder="İl" search selection style={{ top: "15px" }}>
-          <Dropdown.Menu>
-            {cities.map((city) => (
-              <Dropdown.Item>{city.cityName}</Dropdown.Item>
-            ))}
-          </Dropdown.Menu>
-        </Dropdown>
-        <Dropdown placeholder="İlçe" search selection style={{ marginTop: "30px" }}>
-          <Dropdown.Menu></Dropdown.Menu>
-        </Dropdown>
-        </div>
+      <Segment style={{ height: "17em" }}>
+        <header style={{ marginLeft: "-9em" }}>Ülke/İl/İlçe</header>
+        <Select placeholder="Ülke" options={countriesOptions} style={{ marginTop: "15px" }}/>
+        <Select placeholder="İl" options={citiesOptions} style={{ marginTop: "15px" }}/>
+        <Select placeholder="İlçe" style={{ marginTop: "15px" }}/>
       </Segment>
     </div>
   );

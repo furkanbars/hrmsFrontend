@@ -7,7 +7,7 @@ export default function SignedOut(props) {
     <div>
         <Menu.Item>
           <Button.Group>
-            <Button onClick={props.signIn}>Giriş Yap</Button>
+            <Button  onClick={props.signIn}>Giriş Yap</Button>
             <Button.Or text="or" />
             <Button positive>Kayıt Ol</Button>
           </Button.Group>

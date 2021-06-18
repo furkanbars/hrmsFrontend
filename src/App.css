@@ -1,8 +1,76 @@
 .App {
   text-align: center;
   background-color: azure;
+  /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif */
+  font-family: 'Mate SC', serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .ui.main.container {
   margin-top: 5em;
 }
+
+.myContainer{
+  margin-top: 50px;
+  background-image: url("https://www.resimyukle.org/images/2021/06/14/fc1783ea4a9b71d79f4dccfb40e7efda.png");
+  background-position: bottom;
+  height: 1100px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
+}
+
+.myHeader{
+  font-size: 37px;
+ font-family: Geneva, Arial, Helvetica, sans-serif; 
+  color: azure;
+  text-shadow:2px 2px 5px black;
+}
+
+.myPar{
+  font-size: 25px;
+ font-family: Geneva, Arial, Helvetica, sans-serif; 
+  color: azure;
+  text-shadow:2px 2px 5px black;
+  font-weight: normal;
+  font-style: italic;
+}
+
+.homeDiv{
+  margin-top: 50px;
+  height: 1100px;
+}
+
+.myNavi{
+  z-index: 1;
+}
+
+.formHeader{
+  font-family: Geneva, Arial, Helvetica, sans-serif; 
+  font-size: 25px;
+  font-style: normal;
+}
+
+.label{
+  font-family: 'Mate SC', serif;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.startButton{
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+}
+
+ /* background-image: url("https://salesdatahub.com/wp-content/uploads/2018/02/business-background-check.jpg");
+  height: 900px; /* You must set a specified height */
+/*   background-position: center; /* Center the image */
+ /*  background-repeat: no-repeat; /* Do not repeat the image */
+ /* background-size: cover;  */
+
+
+/* 
+font-family: 'Raleway', sans-serif; */
+
+/* 
+height: 1100px;  */
+/* Tahoma, sans-serif */

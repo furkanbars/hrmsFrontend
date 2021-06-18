@@ -1,11 +1,19 @@
 import React from "react";
-import CityList from "../pages/CityList";
 import JobAdvertisementList from "../pages/JobAdvertisementList";
-import { Button,Card,Image,Grid } from "semantic-ui-react";
-
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import  Home  from "../pages/Home";
+import JobAdvertisementCreate from '../pages/JobAdvertisementCreate'
+ 
 export default function Dashboard() {
   return (
     <div>
+      <Switch>
+        <Route exact path="/" component={Home}></Route>
+        <Route exact path="/home" component={Home}></Route>
+        <Route exact path="/jobadvertisements" component={JobAdvertisementList}></Route>
+        <Route exact path="/jobadvertisements/add" component={JobAdvertisementCreate}></Route>
+      </Switch>
+      {/* <Header as="h2" textAlign="center" style={{marginTop:"-2em"}}>İş İlanları</Header>
       <Grid>
         <Grid.Row>
           <Grid.Column width={4}>
@@ -15,7 +23,7 @@ export default function Dashboard() {
             <JobAdvertisementList />
           </Grid.Column>
         </Grid.Row>
-      </Grid>
+      </Grid> */}
     </div>
   );
 }
