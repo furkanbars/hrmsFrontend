@@ -1,0 +1,38 @@
+.profilJobSeekerContainer{
+    min-height: 1000px;
+}
+
+.profilJobSeekerLeftbar{
+    top: 100px;
+    min-height: 700px
+}
+
+.profilJobSeekerMainArea{
+    top: 100px;
+    min-height: 700px
+}
+
+.leftbarOptions{
+    margin-top: 35px;
+}
+
+.profilJobSeekerHeaderName{
+    text-align: center;
+    font-family: "Baloo Tammudu 2", cursive;
+    font-family: "Raleway", sans-serif;
+}
+
+.header{
+    margin-top: 50px;
+}
+
+.barOption{
+    color: rgb(  52, 73, 94  );
+}
+
+.email{
+    font-family: "Baloo Tammudu 2", cursive;
+    font-family: "Raleway", sans-serif;
+    font-style: normal;
+    margin-top: 3px;
+}

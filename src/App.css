@@ -1,72 +1,123 @@
 .App {
+  min-height: 1000px;
   text-align: center;
   background-color: azure;
   /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif */
-  font-family: 'Mate SC', serif;
-  font-family: 'Open Sans', sans-serif;
+  /* font-family: 'Baloo Tammudu 2', cursive;
+  font-family: 'Raleway', sans-serif; */
 }
 
 .ui.main.container {
-  margin-top: 5em;
+  margin-top: 4em;
 }
 
-.myContainer{
+.myContainer {
   margin-top: 50px;
-  background-image: url("https://www.resimyukle.org/images/2021/06/14/fc1783ea4a9b71d79f4dccfb40e7efda.png");
+  background-image: url("./image.png");
   background-position: bottom;
-  height: 1100px; /* You must set a specified height */
+  min-height: 1100px; /* You must set a specified height */
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover;
 }
 
-.myHeader{
+/* https://www.resimyukle.org/images/2021/06/14/fc1783ea4a9b71d79f4dccfb40e7efda.png */
+.myHeader {
   font-size: 37px;
- font-family: Geneva, Arial, Helvetica, sans-serif; 
+  font-family: Geneva, Arial, Helvetica, sans-serif;
   color: azure;
-  text-shadow:2px 2px 5px black;
+  text-shadow: 2px 2px 5px black;
 }
 
-.myPar{
+.myPar {
   font-size: 25px;
- font-family: Geneva, Arial, Helvetica, sans-serif; 
+  font-family: Geneva, Arial, Helvetica, sans-serif;
   color: azure;
-  text-shadow:2px 2px 5px black;
+  text-shadow: 2px 2px 5px black;
   font-weight: normal;
   font-style: italic;
 }
 
-.homeDiv{
+.homeDiv {
   margin-top: 50px;
-  height: 1100px;
+  min-height: 1000px;
 }
 
-.myNavi{
+.myNavi {
   z-index: 1;
 }
 
-.formHeader{
-  font-family: Geneva, Arial, Helvetica, sans-serif; 
-  font-size: 25px;
-  font-style: normal;
+.label {
+  font-family: "Mate SC", serif;
+  font-family: "Open Sans", sans-serif;
 }
 
-.label{
-  font-family: 'Mate SC', serif;
-  font-family: 'Open Sans', sans-serif;
-}
-
-.startButton{
-  font-family: 'Raleway', sans-serif;
+.startButton {
+  font-family: "Raleway", sans-serif;
   font-size: 20px;
 }
 
- /* background-image: url("https://salesdatahub.com/wp-content/uploads/2018/02/business-background-check.jpg");
+/* 
+.searchBar{
+  top: 10em;
+  position: relative;
+  float: left;
+  left: 50px;
+} */
+
+
+.cityListSegment{
+  top: 2em;
+  min-height: 32em;
+}
+
+.forgottenPassword{
+  position: relative;
+  float: right;
+  top: 20px;
+}
+
+.employernavidropdown{
+  font-family: "Baloo Tammudu 2", cursive;
+  font-family: "Raleway", sans-serif;
+}
+
+.workingTypeRadio{
+  position: relative;
+  float: left;
+  top: 7px;
+  left: 17px;
+}
+
+.workingHourRadio{
+ 
+  top: 15px;
+  left: -47px;
+}
+
+.footer{
+  bottom: 0;
+  font-size:15px;
+  line-height:24px;
+  width: 100%;
+}
+
+
+/* rgb(  52, 73, 94  ); */
+
+/* bunlar login componentinin backgroundları */
+/* https://blog.apruve.com/hubfs/Sales%20Objections-01.png */
+/* https://avatars.mds.yandex.net/get-zen_doc/3588827/pub_60263814b1a0bb52b44e5e0f_60263884cd2cb47e6365fd82/scale_1200 */
+/* https://i.ytimg.com/vi/06oj6q7emNg/maxresdefault.jpg */
+/* https://images.pexels.com/photos/327540/pexels-photo-327540.jpeg?fit=crop&amp;h=1000&amp;mark=https%3A%2F%2Fassets.imgix.net%2F~text%3Fbg%3D80000000%26txt%3D%25D0%2591%25D0%25B5%25D1%2581%25D0%25BF%25D0%25BB%25D0%25B0%25D1%2582%25D0%25BD%25D1%258B%25D0%25B5%2B%25D1%2581%25D1%2582%25D0%25BE%25D0%25BA%25D0%25BE%25D0%25B2%25D1%258B%25D0%25B5%2B%25D1%2584%25D0%25BE%25D1%2582%25D0%25BE%26txtalign%3Dcenter%26txtclr%3Dfff%26txtfont%3DAvenir-Heavy%26txtpad%3D20%26txtsize%3D120%26w%3D1300&amp;markalign=center%2Cmiddle&amp;txt=pexels.com&amp;txtalign=center&amp;txtclr=eeffffff&amp;txtfont=Avenir-Heavy&amp;txtshad=10&amp;txtsize=60&amp;w=1500 */
+
+
+
+/* background-image: url("https://salesdatahub.com/wp-content/uploads/2018/02/business-background-check.jpg");
   height: 900px; /* You must set a specified height */
 /*   background-position: center; /* Center the image */
- /*  background-repeat: no-repeat; /* Do not repeat the image */
- /* background-size: cover;  */
-
+/*  background-repeat: no-repeat; /* Do not repeat the image */
+/* background-size: cover;  */
 
 /* 
 font-family: 'Raleway', sans-serif; */

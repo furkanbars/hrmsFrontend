@@ -1,0 +1,240 @@
+.registerJobSeekerImageHeader {
+  margin-top: 11em;
+  margin-left: -11em;
+  font-family: "Baloo Tammudu 2", cursive;
+  font-family: "Raleway", sans-serif;
+}
+
+.registerJobSeekerSegment {
+  top: 150px;
+  min-height: 47em;
+  height: auto;
+}
+
+.registerJobSeekerHeader {
+  padding-top: 13px;
+  font-family: "Baloo Tammudu 2", cursive;
+  font-family: "Raleway", sans-serif;
+  color: rgb(59, 58, 58);
+  font-size: 20px;
+}
+
+.registerJobSeekerDiv {
+  margin-top: 35px;
+}
+
+.registerJobSeekerCheckBox {
+  top: 30px;
+  position: relative;
+  float: left;
+  left: 15px;
+}
+
+.registerJobSeekerCheckBox2 {
+  top: 40px;
+  position: relative;
+  float: left;
+  margin-left: 15px;
+}
+
+.registerJobSeekerButton {
+  position: relative;
+  float: inherit;
+  left: 5px;
+  width: 280px;
+  top: 70px;
+}
+
+.alreadyAccount {
+  top: 9em;
+  right: 11em;
+  position: relative;
+  float: right;
+  font-family: "Baloo Tammudu 2", cursive;
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+}
+
+.alreadyAccountSignIn {
+  top: 142px;
+  position: relative;
+  float: right;
+  right: -30px;
+  font-family: "Baloo Tammudu 2", cursive;
+  font-family: "Raleway", sans-serif;
+  font-size: 20px;
+}
+
+.registerJobSeekerImage {
+  top: 21em;
+  left: 7em;
+}
+
+.loginContainer {
+  background-image: url("https://images.pexels.com/photos/327540/pexels-photo-327540.jpeg?fit=crop&amp;h=1000&amp;mark=https%3A%2F%2Fassets.imgix.net%2F~text%3Fbg%3D80000000%26txt%3D%25D0%2591%25D0%25B5%25D1%2581%25D0%25BF%25D0%25BB%25D0%25B0%25D1%2582%25D0%25BD%25D1%258B%25D0%25B5%2B%25D1%2581%25D1%2582%25D0%25BE%25D0%25BA%25D0%25BE%25D0%25B2%25D1%258B%25D0%25B5%2B%25D1%2584%25D0%25BE%25D1%2582%25D0%25BE%26txtalign%3Dcenter%26txtclr%3Dfff%26txtfont%3DAvenir-Heavy%26txtpad%3D20%26txtsize%3D120%26w%3D1300&amp;markalign=center%2Cmiddle&amp;txt=pexels.com&amp;txtalign=center&amp;txtclr=eeffffff&amp;txtfont=Avenir-Heavy&amp;txtshad=10&amp;txtsize=60&amp;w=1500");
+  background-position: bottom;
+  height: 1100px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
+}
+
+.loginEmployerSegment{
+  top: 200px;
+  width: auto;
+  height: auto;
+}
+
+.beRegisterText{
+  font-family: "Baloo Tammudu 2", cursive;
+  font-family: "Raleway", sans-serif;
+  font-size: 15px;
+}
+
+.loginEmployerSpotDivider{
+  position: relative;
+  float: inherit;
+  left: -50px;
+}
+
+.employerRegisterButton{
+  width: 300px;
+}
+
+.loginEmployerImage{
+  top: 10em;
+  left: 20em;
+}
+
+.loginEmployerSpot{
+  margin-top:7em;
+  margin-left: -7em;
+}
+
+.loginEmployerSpot2{
+  font-family: 'Raleway', sans-serif;
+  font-style: initial;
+  font-size: 20px;
+  color: rgb(88, 86, 86);
+  margin-left: -8em;
+}
+
+.loginEmployerHeader{
+  text-align: center;
+  font-family: "Baloo Tammudu 2", cursive;
+  font-family: "Raleway", sans-serif;
+  color: rgb(88, 86, 86);
+  font-size: 20px;
+}
+
+.loginSegment {
+  top: 150px;
+  width: auto;
+  height: auto;
+}
+
+.loginHeader {
+  position: relative;
+  float: left;
+  font-family: "Baloo Tammudu 2", cursive;
+  font-family: "Raleway", sans-serif;
+  color: rgb(88, 86, 86);
+  font-size: 20px;
+}
+
+.loginCheckBox {
+  position: relative;
+  float: left;
+  top: 20px;
+}
+
+.loginButton {
+  position: relative;
+  float: left;
+  top: 45px;
+  width: 300px;
+}
+
+.loginDivider {
+  padding-top: 60px;
+}
+
+.loginNewAccount {
+  position: relative;
+  float: inherit;
+  top: -13px;
+  font-family: "Baloo Tammudu 2", cursive;
+  font-family: "Raleway", sans-serif;
+  font-size: 17px;
+}
+
+.registerEmployerSegment{
+  top: 150px;
+  min-height: 43em;
+  height: auto;
+}
+
+.registerEmployerHeader{
+  padding-top: 13px;
+  font-family: "Baloo Tammudu 2", cursive;
+  font-family: "Raleway", sans-serif;
+  color: rgb(59, 58, 58);
+  font-size: 20px;
+}
+
+.registerEmployerDiv{
+  margin-top: 35px;
+}
+
+.registerEmployerCheckBox{
+  top: 30px;
+  position: relative;
+  float: left;
+  left: 15px;
+}
+
+.registerEmployerCheckBox2{
+  top: 40px;
+  position: relative;
+  float: left;
+  margin-left: 15px;
+}
+
+.registerEmployerButton{
+  position: relative;
+  float: inherit;
+  left: 5px;
+  width: 280px;
+  top: 70px;
+}
+
+.registerEmployerSpot{
+  margin-top:7em;
+  margin-left: -7em;
+}
+
+.registerEmployerSpotDivider{
+  position: relative;
+  float: inherit;
+  left: -50px;
+}
+
+.registerEmployerImage{
+  top: 10em;
+  left: 2em;
+}
+
+.registerJobSeekerContainer{
+  min-height: 970px;
+  height: auto;
+}
+
+.loginEmployerContainer{
+  min-height: 970px;
+  height: auto;
+}
+
+.registerEmployerContainer{
+  min-height: 970px;
+  height: auto;
+}

@@ -1,0 +1,173 @@
+.formHeader {
+  font-family: Geneva, Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  font-style: normal;
+}
+
+
+.searchHeader{
+  font-family: "Baloo Tammudu 2", cursive;
+  font-family: "Raleway", sans-serif;
+  color: rgb(88, 86, 86);
+  font-size: 20px;
+
+  
+  position: relative;
+  float: left;
+  font-size: 17px;
+  top: 60px;
+  left: 24em;
+}
+
+.jobAdvertisementHeader{
+  padding-top: 30px;
+  font-family: 'Baloo Tammudu 2', cursive;
+  font-family: 'Raleway', sans-serif;
+  font-size: 30px;
+}
+
+.CardsJobAdvertisement{
+  top: 2em;
+}
+
+.jobadvertisementtitle{
+  font-family: "Baloo Tammudu 2", cursive;
+  font-family: "Raleway", sans-serif;
+}
+
+.segmentjobadvertisement{
+  top: 150px;
+  min-height: 70em;
+  bottom:15em;
+}
+/* 
+.buttonjobadvertisement{
+  position: relative;
+  top: 30px;
+  width: 670px;
+  height: 70px;
+  font-size: 30px;
+} */
+
+.jobheaderjobadvertisement{
+  font-family: "Baloo Tammudu 2", cursive;
+  font-family: "Raleway", sans-serif;
+  text-align: left;
+  font-size: 50px;
+  margin-left: 15px;
+  padding-top: 50px;
+}
+
+.jobAdvertisementContainer{
+  min-height: 100em;
+}
+
+.jobAdvertisementDescription{
+  position: relative;
+  float: left;
+  padding-top: 40px;
+  /* font-family: "Baloo Tammudu 2", cursive;
+  font-family: "Raleway", sans-serif; */
+  font-style: unset;
+  font-size: 20px;
+  text-align: left;
+}
+
+.jobAdWaitingConfirmDiv{
+  position: relative;
+  float: none;
+  top: 150px;
+}
+
+.jobAdWaitingConfirmContainer{
+  min-height: 1000px;
+}
+
+.jobAdWaitingConfirmHeader{
+  font-family: "Baloo Tammudu 2", cursive;
+  font-family: "Raleway", sans-serif;
+}
+
+.jobAdWaitingConfirmTable{
+  margin-top: 3em;
+}
+
+.jobAdvertisementCreateSegment{
+  top: 7em;
+  min-height: 57em; 
+  height:auto;
+}
+
+.jobadvertisementCompanyName{
+  position: relative;
+  float: left;
+  left: 15px;
+}
+
+.main{
+  min-height: 1000px;
+  height: auto;
+}
+
+.jobAdvertisementWorkingHour{
+  text-align: left;
+  margin-left: 50px;
+}
+
+.jobadvertisementIcon{
+  position: relative;
+  float: left;
+  left: 15px;
+  top: 26px;
+}
+
+.jobAdvertisementIcon3{
+  position: relative;
+  float: left;
+  left: 15px;
+  top: 33px;
+}
+
+.jobAdvertisementCount{
+  text-align: left;
+  margin-left: 50px;
+  margin-top: 33px;
+}
+
+.jobAdvertisementWorkingType{
+  text-align: left;
+  margin-left: 50px;
+  margin-top: 27px;
+}
+
+.jobAdvertisementIcon2{
+  position: relative;
+  float: left;
+  left: 15px;
+  top: 27px;
+}
+
+.jobadvertisementIcon4{
+  position: relative;
+  float: left;
+  left: 15px;
+  top: 33px;
+}
+
+.jobAdvertisementLastDate{
+  text-align: left;
+  margin-left: 50px;
+  margin-top: 33px;
+}
+
+.jobAdvertisementPagination{
+  position: relative;
+  float: initial;
+  top: 50px;
+}
+
+/* font-family: 'Abel', sans-serif;
+  font-family: 'Baloo Tammudu 2', cursive;
+  font-style: lighter;
+  color: rgb(88, 86, 86);
+  */

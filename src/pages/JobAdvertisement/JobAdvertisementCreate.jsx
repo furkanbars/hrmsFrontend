@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import JobAdvertisementService from "../services/jobAdvertisementService";
-import JobPositionService from "../services/jobPositionService";
-import CityService from "../services/cityService";
-import WorkTypeService from "../services/workTypeService";
-import WorkHourService from "../services/workHourService";
+import JobAdvertisementService from "../../services/jobAdvertisementService";
+import JobPositionService from "../../services/jobPositionService";
+import CityService from "../../services/cityService";
+import WorkTypeService from "../../services/workTypeService";
+import WorkHourService from "../../services/workHourService";
 import {
   Button,
   Grid,
@@ -15,8 +15,9 @@ import {
   Form,
   TextArea,
   Label,
-  Icon,
 } from "semantic-ui-react";
+import "./jobAdvertisement.css";
+import { useHistory } from "react-router";
 
 export default function JobAdvertisementCreate() {
   let jobAdvertisementService = new JobAdvertisementService();
@@ -46,6 +47,8 @@ export default function JobAdvertisementCreate() {
       .then((response) => setWorkingHours(response.data.data));
   }, []);
 
+  const history = useHistory();
+
   let cityOptions = cities.map((city, index) => ({
     key: index,
     text: city.cityName,
@@ -71,55 +74,57 @@ export default function JobAdvertisementCreate() {
   }));
 
   const jobAdvertisementAddSchema = Yup.object().shape({
-    jobPositionId: Yup.number().required("İş poziyonu boş bırakılamaz!"),
+    jobId: Yup.number().required("İş poziyonu boş bırakılamaz!"),
     cityId: Yup.number().required("Şehir bilgisi boş bırakılamaz!"),
     workingTypeId: Yup.number().required("Çalışma stili boş bırakılamaz!"),
     workingHourId: Yup.number().required("Çalışma saati tipi boş bırakılamaz!"),
     minSalary: Yup.number().min(0, "Maaş 0'dan küçük olamaz!"),
     maxSalary: Yup.number().min(0, "Maaş 0'dan küçük olamaz!"),
-    openPositionCount: Yup.number()
+    numberOfPosition: Yup.number()
       .min(0, "İstihdam sayısı 0'dan küçük olamaz!")
       .required("İstihdam sayısı boş bırakılamaz!"),
     lastDate: Yup.date()
       .min(new Date(), "Son başvuru tarihi bugünden itibaren olmalıdır!")
       .required("Son başvuru tarihi boş bırakılamaz!"),
+    title: Yup.string().required("İş başlığı boş bırakılamaz!"),
     description: Yup.string().required("İş açıklaması boş bırakılamaz!"),
   });
 
   const formik = useFormik({
     initialValues: {
-      jobPositionId: "",
+      jobId: "",
       cityId: "",
       workingTypeId: "",
       workingHourId: "",
       minSalary: "",
       maxSalary: "",
-      openPositionCount: "",
+      numberOfPosition: "",
       lastDate: "",
+      title: "",
       description: "",
     },
     validationSchema: jobAdvertisementAddSchema,
-    onSubmit: (values, { resetForm, setSubmitting }) => {
-      values.employer.id = 2;
+    onSubmit: (values) => {
+      values.employerId = 5;
       console.log(values);
-      setTimeout(() => {
-        resetForm();
-      }, 2000);
-      //this.JobAdvertisementService.addJobAdvertisement(jobAdvertisement)
+      jobAdvertisementService
+        .addJobAdvertisement(values)
+        .then((result) => console.log(result.data.data));
+      alert("İş ilanı eklendi, personelin onayı ardından listelenecektir");
+      history.push("/jobadvertisements");
     },
   });
 
   return (
     <div className="jobAdvertisementCreateDiv">
-      <Container style={{ height: "870px" }}>
+      <Container style={{ minHeight: "1000px", height:"auto" }}>
         <Grid>
           <Grid.Row>
             <Grid.Column width={4}></Grid.Column>
             <Grid.Column width={8}>
-              <Segment raised style={{ top: "7em", height: "55em" }}>
+              <Segment className="jobAdvertisementCreateSegment" raised style={{  }}>
                 <Header>
-                  
-                    <h3 className="formHeader">İş İlanı Ekle </h3>
+                  <h3 className="formHeader">İş İlanı Ekle </h3>
                 </Header>
                 <Form onSubmit={formik.handleSubmit}>
                   <Form.Field>
@@ -150,11 +155,10 @@ export default function JobAdvertisementCreate() {
                   <Form.Field>
                     <label style={{ position: "relative", float: "left" }}>
                       İş pozisyonu
-                      {formik.errors.jobPositionId &&
-                      formik.touched.jobPositionId ? (
+                      {formik.errors.jobId && formik.touched.jobId ? (
                         <Label style={{ marginLeft: "2em" }}>
                           <Label.Detail style={{ color: "red" }}>
-                            {formik.errors.jobPositionId}
+                            {formik.errors.jobId}
                           </Label.Detail>
                         </Label>
                       ) : null}
@@ -162,9 +166,9 @@ export default function JobAdvertisementCreate() {
                     <Form.Select
                       placeholder="Pozisyon seçiniz"
                       clearable
-                      value={formik.values.jobPositionId}
+                      value={formik.values.jobId}
                       onChange={(event, data) =>
-                        formik.setFieldValue("jobPositionId", data.value)
+                        formik.setFieldValue("jobId", data.value)
                       }
                       options={jobPositionOptions}
                     />
@@ -228,7 +232,6 @@ export default function JobAdvertisementCreate() {
                       <Form.Input
                         name="minSalary"
                         type="number"
-                        clearable
                         placeholder="Minimum maaşı giriniz"
                         style={{ width: "18em" }}
                         value={formik.values.minSalary}
@@ -260,21 +263,21 @@ export default function JobAdvertisementCreate() {
                     <Form.Field>
                       <label style={{ position: "relative", float: "left" }}>
                         Açık Poziyon Sayısı
-                        {formik.errors.openPositionCount &&
-                        formik.touched.openPositionCount ? (
+                        {formik.errors.numberOfPosition &&
+                        formik.touched.numberOfPosition ? (
                           <Label>
                             <Label.Detail style={{ color: "red" }}>
-                              {formik.errors.openPositionCount}
+                              {formik.errors.numberOfPosition}
                             </Label.Detail>
                           </Label>
                         ) : null}
                       </label>
                       <Form.Input
-                        name="openPositionCount"
+                        name="numberOfPosition"
                         type="number"
                         placeholder="Açık pozisyon sayısını giriniz"
                         style={{ width: "18em" }}
-                        value={formik.values.openPositionCount}
+                        value={formik.values.numberOfPosition}
                         onChange={formik.handleChange}
                       />
                     </Form.Field>
@@ -299,6 +302,26 @@ export default function JobAdvertisementCreate() {
                       />
                     </Form.Field>
                   </Form.Group>
+                    <Form.Field>
+                      <label style={{ position: "relative", float: "left" }}>
+                        İş başlığı
+                        {formik.errors.title && formik.touched.title ? (
+                          <Label>
+                            <Label.Detail style={{ color: "red" }}>
+                              {formik.errors.title}
+                            </Label.Detail>
+                          </Label>
+                        ) : null}
+                      </label>
+                      <Form.Input
+                        name="title"
+                        type="text"
+                        placeholder="İş başlığını giriniz"
+                        style={{ width: "37em" }}
+                        value={formik.values.title}
+                        onChange={formik.handleChange}
+                      />
+                    </Form.Field>
                   <Form.Field>
                     <label style={{ position: "relative", float: "left" }}>
                       Açıklama
