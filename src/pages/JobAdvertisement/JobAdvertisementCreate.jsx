@@ -4,8 +4,8 @@ import * as Yup from "yup";
 import JobAdvertisementService from "../../services/jobAdvertisementService";
 import JobPositionService from "../../services/jobPositionService";
 import CityService from "../../services/cityService";
+import WorkPlaceTypeService from "../../services/workPlaceTypeService";
 import WorkTypeService from "../../services/workTypeService";
-import WorkHourService from "../../services/workHourService";
 import {
   Button,
   Grid,
@@ -18,14 +18,15 @@ import {
 } from "semantic-ui-react";
 import "./jobAdvertisement.css";
 import { useHistory } from "react-router";
+import { toast } from "react-toastify";
 
 export default function JobAdvertisementCreate() {
   let jobAdvertisementService = new JobAdvertisementService();
 
   const [cities, setCities] = useState([]);
   const [jobPositions, setJobPositions] = useState([]);
+  const [workingPlaceTypes, setWorkingPlaceTypes] = useState([]);
   const [workingTypes, setWorkingTypes] = useState([]);
-  const [workingHours, setWorkingHours] = useState([]);
 
   useEffect(() => {
     let jobService = new JobPositionService();
@@ -36,15 +37,15 @@ export default function JobAdvertisementCreate() {
     let cityService = new CityService();
     cityService.getCities().then((response) => setCities(response.data.data));
 
+    let workPlaceTypeService = new WorkPlaceTypeService();
+    workPlaceTypeService
+      .getWorkingPlaceTypes()
+      .then((response) => setWorkingPlaceTypes(response.data.data));
+
     let workTypeService = new WorkTypeService();
     workTypeService
-      .getWorkingTypes()
+      .getWorkTypes()
       .then((response) => setWorkingTypes(response.data.data));
-
-    let workHourService = new WorkHourService();
-    workHourService
-      .getWorkHours()
-      .then((response) => setWorkingHours(response.data.data));
   }, []);
 
   const history = useHistory();
@@ -55,10 +56,10 @@ export default function JobAdvertisementCreate() {
     value: city.id,
   }));
 
-  let workingTypeOptions = workingTypes.map((workingType, index) => ({
+  let workingPlaceTypeOptions = workingPlaceTypes.map((workingPlaceType, index) => ({
     key: index,
-    text: workingType.workingType,
-    value: workingType.id,
+    text: workingPlaceType.workingPlaceType,
+    value: workingPlaceType.id,
   }));
 
   let jobPositionOptions = jobPositions.map((jobPosition, index) => ({
@@ -67,17 +68,17 @@ export default function JobAdvertisementCreate() {
     value: jobPosition.id,
   }));
 
-  let workingHourOptions = workingHours.map((workingHour, index) => ({
+  let workingTypeOptions = workingTypes.map((workingType, index) => ({
     key: index,
-    text: workingHour.workingHour,
-    value: workingHour.id,
+    text: workingType.workingType,
+    value: workingType.id,
   }));
 
   const jobAdvertisementAddSchema = Yup.object().shape({
     jobId: Yup.number().required("İş poziyonu boş bırakılamaz!"),
     cityId: Yup.number().required("Şehir bilgisi boş bırakılamaz!"),
-    workingTypeId: Yup.number().required("Çalışma stili boş bırakılamaz!"),
-    workingHourId: Yup.number().required("Çalışma saati tipi boş bırakılamaz!"),
+    workingPlaceTypeId: Yup.number().required("Çalışma stili boş bırakılamaz!"),
+    workingTypeId: Yup.number().required("Çalışma saati tipi boş bırakılamaz!"),
     minSalary: Yup.number().min(0, "Maaş 0'dan küçük olamaz!"),
     maxSalary: Yup.number().min(0, "Maaş 0'dan küçük olamaz!"),
     numberOfPosition: Yup.number()
@@ -94,8 +95,8 @@ export default function JobAdvertisementCreate() {
     initialValues: {
       jobId: "",
       cityId: "",
+      workingPlaceTypeId: "",
       workingTypeId: "",
-      workingHourId: "",
       minSalary: "",
       maxSalary: "",
       numberOfPosition: "",
@@ -106,10 +107,10 @@ export default function JobAdvertisementCreate() {
     validationSchema: jobAdvertisementAddSchema,
     onSubmit: (values) => {
       values.employerId = 5;
-      console.log(values);
+
       jobAdvertisementService
         .addJobAdvertisement(values)
-        .then((result) => console.log(result.data.data));
+        .then((result) => toast.success("İş ilanı eklendi, personelin onayının ardından yayınlanacaktır."));
       alert("İş ilanı eklendi, personelin onayı ardından listelenecektir");
       history.push("/jobadvertisements");
     },
@@ -175,6 +176,28 @@ export default function JobAdvertisementCreate() {
                   </Form.Field>
                   <Form.Field>
                     <label style={{ position: "relative", float: "left" }}>
+                      Çalışma yerine göre tipi
+                      {formik.errors.workingPlaceTypeId &&
+                      formik.touched.workingPlaceTypeId ? (
+                        <Label style={{ marginLeft: "2em" }}>
+                          <Label.Detail style={{ color: "red" }}>
+                            {formik.errors.workingPlaceTypeId}
+                          </Label.Detail>
+                        </Label>
+                      ) : null}
+                    </label>
+                    <Form.Select
+                      placeholder="Çalışma tipini seçiniz"
+                      clearable
+                      options={workingPlaceTypeOptions}
+                      value={formik.values.workingPlaceTypeId}
+                      onChange={(event, data) =>
+                        formik.setFieldValue("workingPlaceTypeId", data.value)
+                      }
+                    />
+                  </Form.Field>
+                  <Form.Field>
+                    <label style={{ position: "relative", float: "left" }}>
                       Çalışma tipi
                       {formik.errors.workingTypeId &&
                       formik.touched.workingTypeId ? (
@@ -186,34 +209,12 @@ export default function JobAdvertisementCreate() {
                       ) : null}
                     </label>
                     <Form.Select
-                      placeholder="Çalışma tipini seçiniz"
+                      placeholder="Çalışma süresini seçiniz"
                       clearable
                       options={workingTypeOptions}
                       value={formik.values.workingTypeId}
                       onChange={(event, data) =>
                         formik.setFieldValue("workingTypeId", data.value)
-                      }
-                    />
-                  </Form.Field>
-                  <Form.Field>
-                    <label style={{ position: "relative", float: "left" }}>
-                      Çalışma süresi
-                      {formik.errors.workingHourId &&
-                      formik.touched.workingHourId ? (
-                        <Label style={{ marginLeft: "2em" }}>
-                          <Label.Detail style={{ color: "red" }}>
-                            {formik.errors.workingHourId}
-                          </Label.Detail>
-                        </Label>
-                      ) : null}
-                    </label>
-                    <Form.Select
-                      placeholder="Çalışma süresini seçiniz"
-                      clearable
-                      options={workingHourOptions}
-                      value={formik.values.workingHourId}
-                      onChange={(event, data) =>
-                        formik.setFieldValue("workingHourId", data.value)
                       }
                     />
                   </Form.Field>

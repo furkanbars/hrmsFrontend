@@ -1,38 +1,69 @@
-.profilJobSeekerContainer{
-    min-height: 1000px;
+.profilJobSeekerContainer {
+  min-height: 1000px;
 }
 
-.profilJobSeekerLeftbar{
-    top: 100px;
-    min-height: 700px
+.profilJobSeekerLeftbar {
+  top: 130px;
+  min-height: 700px;
 }
 
-.profilJobSeekerMainArea{
-    top: 100px;
-    min-height: 700px
+.leftbarOptions {
+  margin-top: 35px;
+  margin-left: 50px;
 }
 
-.leftbarOptions{
-    margin-top: 35px;
+.profilJobSeekerHeaderName {
+  text-align: center;
+  font-family: "Baloo Tammudu 2", cursive;
+  font-family: "Raleway", sans-serif;
 }
 
-.profilJobSeekerHeaderName{
-    text-align: center;
-    font-family: "Baloo Tammudu 2", cursive;
-    font-family: "Raleway", sans-serif;
+.header {
+  margin-top: 50px;
 }
 
-.header{
-    margin-top: 50px;
+.email {
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+
+  margin-top: 3px;
+  margin-left: -60px;
 }
 
-.barOption{
-    color: rgb(  52, 73, 94  );
+.birthDate {
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  margin-top: 7px;
+  margin-left: -233px;
 }
 
-.email{
-    font-family: "Baloo Tammudu 2", cursive;
-    font-family: "Raleway", sans-serif;
-    font-style: normal;
-    margin-top: 3px;
+.cityName {
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  margin-top: 7px;
+  margin-left: -278px;
+}
+
+.github {
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  margin-top: 7px;
+  margin-left: -200px;
+}
+
+.lenkedn {
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  margin-top: 7px;
+  margin-left: -187px;
+}
+
+.education{
+  padding-top: 13px;
+  font-family: "Baloo Tammudu 2", cursive;
+  font-family: "Raleway", sans-serif;
+  color: rgb(59, 58, 58);
+  font-size: 25px;
+  text-align: left;
+  margin-left: 20px;
 }

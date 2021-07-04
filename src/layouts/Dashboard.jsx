@@ -10,6 +10,7 @@ import EmployerLogin from "../pages/Auth/EmployerLogin";
 import EmployerRegister from "../pages/Auth/EmployerRegister";
 import jobAdvertisementNotConfirm from "../pages/JobAdvertisement/jobAdvertisementNotConfirm";
 import JobSeekerProfil from "../pages/Profils/JobSeekerProfil";
+import Footer from "./Footer"
  
 export default function Dashboard() {
   return (
@@ -27,6 +28,7 @@ export default function Dashboard() {
         <Route exact path="/profil/jobSeeker/:userId" component={JobSeekerProfil}/>
         <Route exact path="/jobadvertisements/waitingconfirm" component={jobAdvertisementNotConfirm}/>
       </Switch>
+      <Footer className="footer"/>
     </div>
   );
 }

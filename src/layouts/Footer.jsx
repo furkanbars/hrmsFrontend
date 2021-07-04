@@ -3,7 +3,7 @@ import { Card,Grid,Icon,Segment } from 'semantic-ui-react'
 
 export default function Footer() {
     return (
-        <div className="footer">
+        <div style={{width: "100%"}} className="footer">
              <Segment textAlign='center' inverted color='black'>
                 <Icon name = "envelope outline"/>abdullahfurkanbars@gmail.com 	&nbsp;&nbsp;&nbsp;
                 <Icon name = "phone"/>0523 222 11 23 &nbsp;&nbsp;&nbsp;

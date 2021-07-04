@@ -7,32 +7,61 @@ import {
   Header,
   Container,
   Pagination,
+  Icon
 } from "semantic-ui-react";
 import JobAdvertisementService from "../../services/jobAdvertisementService";
 import CityList from "../../layouts/CityList";
 import SearchBar from "../../layouts/SearchBar";
 import "./jobAdvertisement.css";
 import { Link } from "react-router-dom";
+import JobAdvertisementFavoriteService from "../../services/jobAdvertisementFavoriteService"
+import { ToastContainer, toast } from "react-toastify";
 
 export default function JobAdvertisementList() {
+  
   const [jobAdvertisements, setJobAdvertisements] = useState([]);
   const [pageNo, setPageNo] = useState(1);
-  const [pageSize, setPageSize] = useState(3);
+  const [pageSize] = useState(3);
+  const [favorites, setFavorites] = useState([])
 
   let jobAdvertisementService = new JobAdvertisementService();
-
+  let jobAdvertisementFavoriteService = new JobAdvertisementFavoriteService();
   useEffect(() => {
     jobAdvertisementService
       .getAllSorted(pageNo, pageSize)
       .then((response) => setJobAdvertisements(response.data.data))
-      .then(console.log(jobAdvertisements));
-  }, []);
+
+    jobAdvertisementFavoriteService.getByUserId(1).then((response)=>setFavorites(response.data.data))
+  }, [pageNo,pageSize]);
 
   function handlePaginationChange(page) {
-    console.log("Active page:" + page);
     setPageNo(page);
-    jobAdvertisementService.getAllSorted(pageNo,pageSize).then((response)=>setJobAdvertisements(response.data.data))
   };
+
+  function handleFavoriteStatus(userId,jobAdvertisementId){
+    let jobAdvertisementFavorite = {
+      jobAdvertisement:{
+        id:jobAdvertisementId
+      },
+      jobSeeker:{
+        id:userId
+      }
+    }
+    jobAdvertisementFavoriteService.add(jobAdvertisementFavorite).then(toast.success("Favorilere eklendi."))
+  }
+
+  function handleFavoriteStatusFalse(userId,jobAdvertisementId){
+    jobAdvertisementFavoriteService.delete(userId,jobAdvertisementId).then(toast.success("Favorilerden çıkartıldı."))
+  }
+
+  function checkFavoriteJobAdvertisement(jobAdvertisementId){
+    for (let i = 0; i < favorites.length; i++) {
+      if(favorites[i].jobAdvertisement?.id === jobAdvertisementId){
+        return true;
+      }
+    }
+    return false;
+  }
 
   return (
     <div>
@@ -67,7 +96,7 @@ export default function JobAdvertisementList() {
                             />
                           </Grid.Column>
                           <Grid.Column width={12}>
-                            <div style={{ marginLeft: "1em" }}>
+                            <div style={{ marginLeft: "1em",marginTop:"-2em" }}>
                               <Card.Header>
                                 <h3 className="jobadvertisementtitle">
                                   {jobAdvertisement.title}
@@ -82,7 +111,11 @@ export default function JobAdvertisementList() {
                             </div>
                           </Grid.Column>
                           <Grid.Column width={2}>
-                            <Card.Meta style={{ marginTop: "25px" }}>
+                            {checkFavoriteJobAdvertisement(jobAdvertisement.id)===true ? (
+                              <Icon name="like" color="red" onClick={()=>handleFavoriteStatusFalse(1,jobAdvertisement.id)}></Icon>) :
+                              (<Icon name="like" onClick={()=>handleFavoriteStatus(1,jobAdvertisement.id)}></Icon>
+                              )}
+                            <Card.Meta style={{ marginTop: "13px" }}>
                               {jobAdvertisement.lastDate}
                             </Card.Meta>
                           </Grid.Column>
@@ -113,7 +146,10 @@ export default function JobAdvertisementList() {
                 onPageChange={(e,data)=>{
                   handlePaginationChange(data.activePage)
                 }}
-                totalPages={pageSize}
+                pointing
+                secondary
+                circle="true"
+                totalPages={2}
               />
             </Grid.Column>
           </Grid.Row>

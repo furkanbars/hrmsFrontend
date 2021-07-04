@@ -10,6 +10,7 @@ import {
 } from "semantic-ui-react";
 import JobPositionService from "../services/jobPositionService";
 import CityService from "../services/cityService";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   const [jobs, setJobs] = useState([]);
@@ -34,8 +35,8 @@ export default function Home() {
             yakala.
           </h3>
         </Header>
-        <Button size="big" color="green" animated style={{width:"15em",height:"4em",top:"2em"}}>
-          <Button.Content visible className="startButton">BAŞLA</Button.Content>
+        <Button size="big" as={Link} to="/jobadvertisements" color="green" animated style={{width:"15em",height:"4em",top:"2em"}}>
+          <Button.Content visible className="startButton" style={{top:"14px"}}>BAŞLA</Button.Content>
           <Button.Content hidden>
             <Icon name="arrow right" />
           </Button.Content>

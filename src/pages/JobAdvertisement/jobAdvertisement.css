@@ -38,7 +38,6 @@
 .segmentjobadvertisement{
   top: 150px;
   min-height: 70em;
-  bottom:15em;
 }
 /* 
 .buttonjobadvertisement{
@@ -58,9 +57,6 @@
   padding-top: 50px;
 }
 
-.jobAdvertisementContainer{
-  min-height: 100em;
-}
 
 .jobAdvertisementDescription{
   position: relative;
@@ -70,7 +66,7 @@
   font-family: "Raleway", sans-serif; */
   font-style: unset;
   font-size: 20px;
-  text-align: left;
+  text-align: justify;
 }
 
 .jobAdWaitingConfirmDiv{
@@ -80,7 +76,7 @@
 }
 
 .jobAdWaitingConfirmContainer{
-  min-height: 1000px;
+  min-height: 860px;
 }
 
 .jobAdWaitingConfirmHeader{

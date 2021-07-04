@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import CityService from "../services/cityService.js";
 import CountryService from "../services/countryService";
-import WorkingTypeService from "../services/workTypeService";
-import WorkHourService from "../services/workHourService";
+import WorkingPlaceTypeService from "../services/workPlaceTypeService";
+import WorkTypeService from "../services/workTypeService";
 import { Segment, Select, Radio, Divider,Header, Button } from "semantic-ui-react";
 
 export default function CityList() {
@@ -10,9 +10,9 @@ export default function CityList() {
 
   const [countries, setCountries] = useState([]);
 
-  const [workingTypes, setWorkingTypes] = useState([]);
+  const [workingPlaceTypes, setWorkingPlaceTypes] = useState([]);
 
-  const [workingHours, setWorkingHours] = useState([]);
+  const [workingTypes, setWorkingTypes] = useState([]);
 
   let countriesOptions = countries.map((country) => ({
     key: country.id,
@@ -26,10 +26,16 @@ export default function CityList() {
     value: city.id,
   }));
 
-  let workingHoursOptions = workingHours.map((workingHour) => ({
-    key:workingHour.id,
-    text:workingHour.workingHour,
-    value:workingHour.workingHour,
+  let workingTypesOptions = workingTypes.map((workingType) => ({
+    key:workingType.id,
+    text:workingType.workingType,
+    value:workingType.workingType,
+  }))
+
+  let workingPlaceTypesOptions = workingPlaceTypes.map((workingPlaceType) => ({
+    key:workingPlaceType.id,
+    text:workingPlaceType.workingPlaceType,
+    value:workingPlaceType.workingPlaceType,
   }))
 
   useEffect(() => {
@@ -41,15 +47,15 @@ export default function CityList() {
       .getCountries()
       .then((response) => setCountries(response.data.data));
 
-    let workingTypeService = new WorkingTypeService();
-    workingTypeService
-      .getWorkingTypes()
-      .then((response) => setWorkingTypes(response.data.data));
+    let workingPlaceTypeService = new WorkingPlaceTypeService();
+    workingPlaceTypeService
+      .getWorkingPlaceTypes()
+      .then((response) => setWorkingPlaceTypes(response.data.data));
 
-    let workingHourService = new WorkHourService();
-    workingHourService
-      .getWorkHours()
-      .then((response) => setWorkingHours(response.data.data));
+    let workingTypeService = new WorkTypeService();
+    workingTypeService
+      .getWorkTypes()
+      .then((response) => setWorkingTypes(response.data.data));
   }, []);
 
   return (
@@ -75,25 +81,23 @@ export default function CityList() {
         {/* <header style={{ marginLeft: "-6em", marginTop: "1em" }}>
           Çalışma Yerine Göre
         </header> */}
-        <Header as="h4" style={{ marginLeft: "-73px", marginTop: "1em" }}>
-          Çalışma Saatine Göre
+        <Header as="h4" style={{ marginLeft: "-130px", marginTop: "1em" }}>
+          Çalışma şekli
         </Header>
-        {workingTypes.map((workingType) => (
-          <Radio
-            className="workingTypeRadio"
-            label={workingType.workingType}
-            value={workingType.workingType}
-          />
-        ))}
+        <Select
+          placeholder="Çalışma şeklini seçiniz"
+          options={workingPlaceTypesOptions}
+          style={{ marginTop: "5px" }}
+        />
 
-        <Divider style={{marginTop:"4em"}}></Divider>
+        <Divider style={{marginTop:"2em"}}></Divider>
 
-        <Header as="h4" style={{ marginLeft: "-73px", marginTop: "1em" }}>
-          Çalışma Saatine Göre
+        <Header as="h4" style={{ marginLeft: "-140px", marginTop: "1em" }}>
+          Çalışma tipi
         </Header>
         <Select
           placeholder="Çalışma saati türünü seçiniz"
-          options={workingHoursOptions}
+          options={workingTypesOptions}
           style={{ marginTop: "5px" }}
         /> 
         
