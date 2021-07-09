@@ -37,7 +37,7 @@ export default function JobAdvertisementDetail() {
 
   return (
     <div>
-      <Container style={{minHeight:"1100px"}}>
+      <Container className="jobAdvertisementDetailContainer" style={{minHeight:"50em"}}>
         <Grid>
           <Grid.Row>
             <Grid.Column width={3} />

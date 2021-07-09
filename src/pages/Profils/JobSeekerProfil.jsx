@@ -36,7 +36,7 @@ export default function JobSeekerProfil() {
           <Grid.Column width={3}>
             <Segment raised className="profilJobSeekerLeftbar">
               <Image
-                src="https://scontent.fyei2-1.fna.fbcdn.net/v/t1.6435-1/p200x200/73541664_2988212794540270_97768543877070848_n.jpg?_nc_cat=110&ccb=1-3&_nc_sid=7206a8&_nc_ohc=cKbsHpfI8igAX-90uZF&_nc_ht=scontent.fyei2-1.fna&tp=6&oh=5e199c3453c42b41a7380bdecf91b3df&oe=60E66A5B"
+                src="../../Vesikalık.png"
                 style={{ width: "200px", left: "55px", top: "30px" }}
                 circular
               />

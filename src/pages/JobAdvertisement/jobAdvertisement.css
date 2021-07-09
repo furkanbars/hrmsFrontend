@@ -90,8 +90,7 @@
 
 .jobAdvertisementCreateSegment{
   top: 7em;
-  min-height: 57em; 
-  height:auto;
+  min-height: 59em;
 }
 
 .jobadvertisementCompanyName{
@@ -160,6 +159,14 @@
   position: relative;
   float: initial;
   top: 50px;
+}
+
+.jobAdvertisementDetailContainer{
+  min-height: 70em;
+}
+
+.detailButton{
+  color: beige;
 }
 
 /* font-family: 'Abel', sans-serif;

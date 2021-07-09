@@ -13,11 +13,11 @@ export default function SignedOut(props) {
     <div>
       <Menu.Item>
         <Button.Group>
-          <Button as={Link} to={"/login"} onClick={props.signIn}>
+          <Button as={Link} to={"/login"} className="naviLoginButton" onClick={props.signIn}>
             Giriş Yap
           </Button>
           <Button.Or text="or" />
-          <Button as={Link} to={"/register/jobseeker"} positive>
+          <Button as={Link} to={"/register/jobseeker"} className="naviRegisterButton" positive>
             Kayıt Ol
           </Button>
         </Button.Group>

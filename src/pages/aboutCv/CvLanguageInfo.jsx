@@ -21,15 +21,13 @@ export default function CvLanguageInfo({cvLanguages}) {
         {cvLanguages?.map((cvLanguage) => (
           <Grid>
             <Grid.Row>
-              <Grid.Column width={4}>
-                
-              </Grid.Column>
+              
               <Grid.Column width={6}>
                 <label style={{ marginLeft: "-225px", textAlign: "left" }}>
                   Dil
                 </label>
                 <h3 style={{ margin: "0px", textAlign: "left" }}>
-                  {cvLanguage.language?.language}
+                  {cvLanguage.language?.languageName}
                 </h3>
                 
               </Grid.Column>

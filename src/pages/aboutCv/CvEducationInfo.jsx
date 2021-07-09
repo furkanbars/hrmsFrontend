@@ -1,6 +1,7 @@
 import React from "react";
-import { Grid, Segment, Image, Header, Icon, Divider } from "semantic-ui-react";
+import { Grid, Segment, Image, Header, Icon, Divider, Button } from "semantic-ui-react";
 import UpdateEducationModal from "../../modals/cvUpdate/UpdateEducationModal";
+import AddEducationModal from "../../modals/cvAdd/AddEducationModal";
 import "./cvInfo.css"
 
 export default function CvEducationInfo({ educations }) {
@@ -19,7 +20,9 @@ export default function CvEducationInfo({ educations }) {
       <Segment raised className="profilJobSeekerEducation">
         <Header>
           <h1 className="education">Eğitim</h1>
+          <AddEducationModal></AddEducationModal>
         </Header>
+        
 
         {educations?.map((education) => (
           <Grid>

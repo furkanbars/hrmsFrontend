@@ -13,3 +13,17 @@
   left: "55px";
   margin: "3px";
 }
+
+.profilJobSeekerEducationAddButton{
+  position: relative;
+  float: inherit;
+  top: -48px;
+  left: -190px;
+}
+
+.profilJobSeekerExperienceAddButton{
+  position: relative;
+  float: inherit;
+  top: -48px;
+  left: -85px;
+}

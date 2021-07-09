@@ -123,7 +123,7 @@ export default function JobAdvertisementCreate() {
           <Grid.Row>
             <Grid.Column width={4}></Grid.Column>
             <Grid.Column width={8}>
-              <Segment className="jobAdvertisementCreateSegment" raised style={{  }}>
+              <Segment className="jobAdvertisementCreateSegment" raised >
                 <Header>
                   <h3 className="formHeader">İş İlanı Ekle </h3>
                 </Header>

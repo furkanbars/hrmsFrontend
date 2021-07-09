@@ -21,7 +21,7 @@ export default function JobAdvertisementList() {
   
   const [jobAdvertisements, setJobAdvertisements] = useState([]);
   const [pageNo, setPageNo] = useState(1);
-  const [pageSize] = useState(3);
+  const [pageSize] = useState(4);
   const [favorites, setFavorites] = useState([])
 
   let jobAdvertisementService = new JobAdvertisementService();
@@ -124,16 +124,13 @@ export default function JobAdvertisementList() {
                     </Card.Content>
                     <Card.Content extra>
                       <div className="ui two buttons">
-                        <Button basic color="green">
+                        <Button basic color="blue">
                           Başvur
                         </Button>
-                        <Button basic color="blue">
-                          <Link
-                            as={Link}
-                            to={`/jobadvertisement/detail/${jobAdvertisement.id}`}
-                          >
+                        <Button as={Link}
+                            to={`/jobadvertisement/detail/${jobAdvertisement.id}`} className="detailButton" color="blue">
+                         
                             İş İlanına Git
-                          </Link>
                         </Button>
                       </div>
                     </Card.Content>

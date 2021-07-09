@@ -1,5 +1,6 @@
 import React from "react";
-import { Grid, Segment, Image, Header, Icon, Divider } from "semantic-ui-react";
+import { Grid, Segment, Image, Header, Icon, Divider,Button } from "semantic-ui-react";
+import UpdateExperienceModal from "../../modals/cvUpdate/UpdateExperienceModal";
 import "./cvInfo.css";
 
 export default function CvExperianceInfo({ experiences }) {
@@ -26,6 +27,7 @@ export default function CvExperianceInfo({ experiences }) {
       >
         <Header>
           <h1 className="education">İş Deneyimleri</h1>
+          <Button icon="add" basic className="profilJobSeekerExperienceAddButton">Yeni Deneyim Ekle</Button>
         </Header>
 
         {experiences?.map((experience) => (
@@ -72,9 +74,9 @@ export default function CvExperianceInfo({ experiences }) {
                   {experience.startDate}
                 </h3>
               </Grid.Column>
-              <Grid.Column width={6}>
+              <Grid.Column width={5}>
                 <div style={{ marginLeft: "30px" }}>
-                  <label style={{ marginLeft: "-205px", textAlign: "left" }}>
+                  <label style={{ marginLeft: "-155px", textAlign: "left" }}>
                     Şehir
                   </label>
                   <h3
@@ -88,7 +90,7 @@ export default function CvExperianceInfo({ experiences }) {
                   </h3>
 
                   <div style={{ margin: "7px" }}>
-                    <label style={{ marginLeft: "-155px", textAlign: "left" }}>
+                    <label style={{ marginLeft: "-104px", textAlign: "left" }}>
                       Çalışma Şekli
                     </label>
                     <h3 style={{ margin: "0px", textAlign: "left" }}>
@@ -97,7 +99,7 @@ export default function CvExperianceInfo({ experiences }) {
                   </div>
 
                   <div style={{ margin: "7px" }}>
-                    <label style={{ marginLeft: "-168px", textAlign: "left" }}>
+                    <label style={{ marginLeft: "-120px", textAlign: "left" }}>
                       Bitiş Tarihi
                     </label>
                     <h3 style={{ margin: "0px", textAlign: "left" }}>
@@ -105,6 +107,9 @@ export default function CvExperianceInfo({ experiences }) {
                     </h3>
                   </div>
                 </div>
+              </Grid.Column>
+              <Grid.Column>
+                <Icon  onClick={<UpdateExperienceModal></UpdateExperienceModal>} color="grey" name="edit"></Icon>
               </Grid.Column>
               <Grid.Column width={4} />
               <Grid.Column width={12}>
