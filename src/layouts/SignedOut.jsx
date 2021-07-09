@@ -17,7 +17,7 @@ export default function SignedOut(props) {
             Giriş Yap
           </Button>
           <Button.Or text="or" />
-          <Button as={Link} to={"/register/jobseeker"} className="naviRegisterButton" positive>
+          <Button as={Link} to={"/register/jobseeker"} className="naviRegisterButton" color="green">
             Kayıt Ol
           </Button>
         </Button.Group>

@@ -7,6 +7,7 @@ import {
   Button,
   Image,
   Icon,
+  Divider,
 } from "semantic-ui-react";
 import "./auth.css";
 import { Link, useHistory } from "react-router-dom";
@@ -54,6 +55,10 @@ export default function JobSeekerRegister() {
               <h1 className="registerJobSeekerImageHeader">
                 Türkiye'nin en çok tercih edilen aday takip sistemi!
               </h1>
+              <Divider style={{marginLeft:"-19em", marginTop:"1em"}}></Divider>
+              <h5 className="registerJobSeekerSpot">
+                Siz de hemen kaydolun, şirketinizi bulup aradığınız işinize kavuşun. 
+              </h5>
               {/* <Icon size="big" className="icon1" name="arrow right"></Icon><h2 Icon="arrow right">İlk ay ücretsiz!</h2>
               <Icon size="big" className="icon2" name="arrow right"></Icon> */}
             </Grid.Column>

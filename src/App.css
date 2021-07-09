@@ -13,7 +13,7 @@
 
 .myContainer {
   margin-top: 50px;
-  background-image: url("./image.png");
+  background-image: url("./images/image.png");
   background-position: bottom;
   min-height: 70em; /* You must set a specified height */
   background-position: center; /* Center the image */
@@ -101,9 +101,15 @@
 .naviRegisterButton{
   font-family: "Baloo Tammudu 2", cursive;
   font-family: "Raleway", sans-serif;
+
 }
 
 .naviLoginButton{
+  font-family: "Baloo Tammudu 2", cursive;
+  font-family: "Raleway", sans-serif;
+}
+
+.cityHeaders{
   font-family: "Baloo Tammudu 2", cursive;
   font-family: "Raleway", sans-serif;
 }

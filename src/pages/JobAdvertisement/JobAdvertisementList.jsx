@@ -64,8 +64,8 @@ export default function JobAdvertisementList() {
   }
 
   return (
-    <div>
-      <h3 className="searchHeader">İş poziyonu veya iş ara</h3>
+    <div >
+        <h3 className="searchHeader">İş poziyonu veya iş ara</h3>
       <Container className="main">
         <SearchBar />
         <Header textAlign="center">

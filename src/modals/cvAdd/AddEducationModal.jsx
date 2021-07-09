@@ -8,6 +8,7 @@ import * as Yup from "yup";
 import EducationService from "../../services/aboutCv/educationService";
 import EducationDepartmentService from "../../services/aboutCv/educationDepartmentService";
 import "../cvUpdateAdd.css";
+import FormSelect from "../../utilities/FormSelect.jsx";
 
 export default function AddEducationModal() {
   const [open, setOpen] = React.useState(false);
@@ -104,7 +105,7 @@ export default function AddEducationModal() {
             }}
           >
             <Form>
-              <Select
+              <FormSelect
                 className="educationSelect"
                 name="graduateId"
                 search
@@ -112,9 +113,10 @@ export default function AddEducationModal() {
                 placeholder="Eğitim Durumu"
                 clearable
                 options={graduateOptions}
+                style={{ position:"relative", float:"left" }}
               />
 
-              <Select
+              <FormSelect
                 className="schoolSelect"
                 name="schoolId"
                 search
@@ -122,10 +124,10 @@ export default function AddEducationModal() {
                 placeholder="Üniversite"
                 clearable
                 options={schoolOptions}
-                style={{ marginLeft: "2em" }}
+                style={{position:"relative", float:"left" }}
               />
 
-              <Select
+              <FormSelect
                 className="facultySelect"
                 name="facultyId"
                 search
@@ -133,10 +135,10 @@ export default function AddEducationModal() {
                 placeholder="Fakülte"
                 clearable
                 options={facultyOptions}
-                style={{ marginLeft: "2em" }}
+                style={{  position:"relative", float:"left" }}
               />
 
-              <Select
+              <FormSelect
                 className="departmentSelect"
                 name="departmentId"
                 search
@@ -144,7 +146,7 @@ export default function AddEducationModal() {
                 placeholder="Bölüm"
                 clearable
                 options={departmentOptions}
-                style={{ marginLeft: "4em", marginLeft: "2em" }}
+                style={{ marginLeft: "4em", marginLeft: "2em", position:"relative", float:"left" }}
               />
               <div style={{marginTop:"1em"}}>
                 <label>Başlangıç Tarihi </label>

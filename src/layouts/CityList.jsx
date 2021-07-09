@@ -61,17 +61,21 @@ export default function CityList() {
   return (
     <div>
       <Segment raised className="cityListSegment">
-        <Header as="h4" style={{ marginLeft: "-73px", marginTop: "1em",marginLeft: "-9em" }}>
+        <Header as="h4" style={{  marginTop: "1em",marginLeft: "-7em" }}>
+        <h4 className="cityHeaders" >
         Ülke/İl/İlçe
+          </h4>
         </Header>
         <Select
           placeholder="Ülke"
           options={countriesOptions}
           style={{ marginTop: "10px" }}
+          clearable
         />
         <Select
           placeholder="İl"
           options={citiesOptions}
+          clearable
           style={{ marginTop: "15px" }}
         />
         <Select placeholder="İlçe" style={{ marginTop: "15px" }} />
@@ -81,23 +85,29 @@ export default function CityList() {
         {/* <header style={{ marginLeft: "-6em", marginTop: "1em" }}>
           Çalışma Yerine Göre
         </header> */}
-        <Header as="h4" style={{ marginLeft: "-130px", marginTop: "1em" }}>
-          Çalışma şekli
+        <Header as="h4" style={{ marginLeft: "-100px", marginTop: "1em" }}>
+          <h4 className="cityHeaders" >
+            Çalışma şekli
+          </h4>
         </Header>
         <Select
           placeholder="Çalışma şeklini seçiniz"
           options={workingPlaceTypesOptions}
+          clearable
           style={{ marginTop: "5px" }}
         />
 
         <Divider style={{marginTop:"2em"}}></Divider>
 
-        <Header as="h4" style={{ marginLeft: "-140px", marginTop: "1em" }}>
-          Çalışma tipi
+        <Header as="h4" style={{ marginLeft: "-115px", marginTop: "1em" }}>
+        <h4 className="cityHeaders" >
+        Çalışma tipi
+          </h4>
         </Header>
         <Select
           placeholder="Çalışma saati türünü seçiniz"
           options={workingTypesOptions}
+          clearable
           style={{ marginTop: "5px" }}
         /> 
         
